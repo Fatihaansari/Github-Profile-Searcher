@@ -10,14 +10,14 @@ const generateProfile = (profile) => {
    <div class="top-section">
      <div class="left">
        <div class="avatar">
-         const res = await fetch(`${url}/${username}`);
+         <img alt="avatar" src="${profile.avatar_url}" />
        </div>
        <div class="self">
          <h1>${profile.name}</h1>
          <h1>@${profile.login}</h1>
        </div>
      </div>
-     <a href="${profile.html_url}" target=_blank">
+     <a href="${profile.html_url}" target="_black">
      <button class="primary-btn">Check Profile</button>
      </a>
    </div>
@@ -67,12 +67,6 @@ const fetchProfile = async () => {
     console.log("data", data);
   } catch (error) {
     console.log({ error });
-
-    if (!username) {
-  loadingEl.innerText = "Please enter username";
-  loadingEl.style.color = "red";
-  return;
-}
     loadingEl.innerText = "";
   }
 };
