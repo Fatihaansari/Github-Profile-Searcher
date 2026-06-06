@@ -1,3 +1,4 @@
+const url = "https://api.github.com/users";
 const searchInputEl = document.getElementById("searchInput");
 const searchButtonEl = document.getElementById("searchBtn");
 const profileContainerEl = document.getElementById("profileContainer");
@@ -16,7 +17,7 @@ const generateProfile = (profile) => {
          <h1>@${profile.login}</h1>
        </div>
      </div>
-     <a href="${profile.html_url}" target="_black">
+     <a href="${profile.html_url}" target=_blank">
      <button class="primary-btn">Check Profile</button>
      </a>
    </div>
@@ -66,6 +67,12 @@ const fetchProfile = async () => {
     console.log("data", data);
   } catch (error) {
     console.log({ error });
+
+    if (!username) {
+  loadingEl.innerText = "Please enter username";
+  loadingEl.style.color = "red";
+  return;
+}
     loadingEl.innerText = "";
   }
 };
