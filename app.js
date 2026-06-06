@@ -9,7 +9,7 @@ const generateProfile = (profile) => {
    <div class="top-section">
      <div class="left">
        <div class="avatar">
-         <img alt="avatar" src="${profile.avatar_url}" />
+         const res = await fetch(`${url}/${username}`);
        </div>
        <div class="self">
          <h1>${profile.name}</h1>
